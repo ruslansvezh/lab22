@@ -1,0 +1,28 @@
+#include <iostream>
+#include <windows.h>
+#include <string>
+#include <fstream>
+using namespace std;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+
+	fstream file;
+	string S;
+
+	file.open("C:\\lab\\lab22.txt");
+
+	while (!file.eof())
+	{
+		getline(file, S, '\0');
+		for (int i = S.find(32) + 1; i <= S.size(); i++)
+		file << S[i];
+	}
+	file.close();
+
+	file.open("C:\\lab\\lab22.txt", ios::out);
+
+	for (int i = S.find(32) + 1; i <= S.size(); i++)
+	file << S[i];
+	file.close();
+}
