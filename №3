@@ -1,0 +1,17 @@
+#include <iostream>
+#include <windows.h>
+#include <string>
+#include <fstream>
+using namespace std;
+int main()
+{
+	setlocale(0, "");
+	fstream file1, file2;
+	string S, N;
+	file1.open("C:\\lab\\lab22.1.txt");
+	file2.open("C:\\lab\\lab22.txt");
+	getline(file1, S);
+	getline(file2, N);
+	file1.seekg(ios_base::beg);
+	file1 << N << S;
+}
