@@ -1,0 +1,27 @@
+#include <iostream>
+#include <windows.h>
+#include <string>
+#include <fstream>
+using namespace std;
+int main()
+{
+	setlocale(0, "");
+
+	fstream file;
+	string S;
+	char ch(32);
+	int k;
+	file.open("C:\\lab\\lab22.txt");
+	
+		getline(file, S, '\0');
+		k = 0;
+		for (int i = 4; i < S.size(); i++)
+		{
+			if (S[i - 4] == ' ' && S[i - 3] == ' ' && S[i - 2] == ' ' && S[i - 1] == ' ' && S[i] == ' ')
+			{
+				k++;
+			}
+		}
+	
+	cout << "Абзацев в тексте: " << k;
+}
