@@ -1,0 +1,26 @@
+#include <iostream>
+#include <windows.h>
+#include <string>
+#include <fstream>
+using namespace std;
+int main()
+{
+	setlocale(0, "");
+	fstream file;
+	string S, name;
+	int N, K;
+	cout << "Введите  N и K: ";
+	cin >> N >> K;
+	file.open("C:\\lab\\lab22.txt");
+
+	for (int i = 0; i < N; i++)
+	{
+		for (int j = 0; j < K; j++)
+		{
+			file << '*';
+		}
+			file << "\n";
+	}
+	file.close();
+	cout << "Программа выполнена";
+}
